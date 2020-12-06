@@ -15,12 +15,14 @@ public:
 	int getMonth();
 	int getYear();
 
+	void dateParseToInt(str date_);
+
 	friend std::istream& operator>>(std::istream& in, date& date);
 
 private:
-	str date_;
+	str date_; 
 	int day_;
 	int month_;
 	int year_;
-	void parserToInt(str* date_);
-}
+	
+};

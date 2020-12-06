@@ -148,6 +148,7 @@
     <ClCompile Include="customer.cpp" />
     <ClCompile Include="date.cpp" />
     <ClCompile Include="flightID.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="str.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

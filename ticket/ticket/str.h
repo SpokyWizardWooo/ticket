@@ -19,9 +19,11 @@ public:
 	}
 
 	void operator=(const char* str);
+	char operator[](int);
 	void operator=(const str& str);
 	void operator+=(const char* str_to_add);
 	void operator+=(const str& str);
+	void operator+=(const char& a);
 
 	template <typename T>
 	friend str operator+(const T& str_1, const T& str_2)
@@ -38,7 +40,7 @@ public:
 	friend std::istream& operator>>(std::istream& in, str& str);
 	friend std::istream& operator>>(std::fstream& in, str& str);
 
-	~str();
+	~str() = default;
 
 private:
 	char* str_;

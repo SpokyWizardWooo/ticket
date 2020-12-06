@@ -25,23 +25,18 @@ str flightID::getFigures(flightID ID)
 
 // Сеттеры
 
-str flightID::setLetters(flightID ID, str letters)
+void flightID::setLetters(flightID ID, str letters)
 {
 	letters_ = letters;
 }
-str flightID::setFigures(flightID ID, str figures)
+void flightID::setFigures(flightID ID, str figures)
 {
 	figures_ = figures;
 }
-str flightID::setFlightID(flightID ID, str letters, str figures)
+void flightID::setFlightID(flightID ID, str letters, str figures)
 {
 	letters_ = letters;
 	figures_ = figures;
-}
-str flightID::setFlightID(flightID ID, str figures, str letters)
-{
-	figures_ = figures;
-	letters_ = letters;
 }
 
 // Операторы

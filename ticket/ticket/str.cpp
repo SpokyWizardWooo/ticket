@@ -49,6 +49,7 @@ void str::operator=(const char* str)
 	}
 	str_[size] = '\0';
 }
+
 void str::operator=(const str& str)
 {
 	if (str_ != nullptr)
@@ -64,6 +65,7 @@ void str::operator=(const str& str)
 	}
 	str_[size] = '\0';
 }
+
 void str::operator+=(const char* str_to_add)
 {
 	if (str_ == nullptr)
@@ -157,6 +159,25 @@ void str::operator+=(const str& str_to_add)
 	}
 }
 
+void str::operator+=(const char& a)
+{
+	if (str_ == nullptr)
+	{
+		delete[] str_;
+		str_ = new char[1];
+		str_[0] = a;
+	}
+	else
+	{
+		char* strHelper = new char[get_size(str_)];
+		delete[] str_;
+		str_ = new char[get_size(strHelper) + 1];
+		str_ = strHelper;
+		str_[get_size(strHelper)] = a;
+		delete[] strHelper;
+	}
+}
+
 bool str::operator==(const str& str)
 {
 	if (str_ == nullptr && str.str_ == nullptr)
@@ -180,6 +201,11 @@ bool str::operator==(const str& str)
 		}
 		return true;
 	}
+}
+
+char str::operator[](int i)
+{
+	return str_[i];
 }
 
 bool str::operator!=(const str& str)
@@ -210,7 +236,6 @@ std::istream& operator>>(std::istream& in, str& str)
 
 	return in;
 }
-str::~str() {}
 
 int str::get_size(const char* str)
 {

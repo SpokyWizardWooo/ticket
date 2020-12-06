@@ -10,10 +10,9 @@ public:
 	str getLetters(flightID ID);
 	str getFigures(flightID ID);
 
-	str setLetters(flightID ID, str letters);
-	str setFigures(flightID ID, str figures);
-	str setFlightID(flightID ID, str letters, str figures);
-	str setFlightID(flightID ID, str figures, str letters);
+	void setLetters(flightID ID, str letters);
+	void setFigures(flightID ID, str figures);
+	void setFlightID(flightID ID, str letters, str figures);
 
 	bool operator==(const flightID& ID);
 	bool operator!=(const flightID& ID);

@@ -39,11 +39,11 @@ str customer::getSurname() const
 
 std::ostream& operator<<(std::ostream& stream, const customer& customer)
 {
-	stream << customer.name_ << " " << customer.surname_;
+	return stream << customer.name_ << " " << customer.surname_;
 }
 std::istream& operator>>(std::istream& input, customer& customer)
 {
-	input >> customer.name_ >> customer.surname_;
+	return input >> customer.name_ >> customer.surname_;
 }
 bool customer::operator==(const customer& customer)
 {
@@ -51,5 +51,5 @@ bool customer::operator==(const customer& customer)
 }
 bool customer::operator!=(const customer& customer)
 {
-	return !operator==(nas);
+	return !operator==(customer);
 }

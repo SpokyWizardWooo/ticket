@@ -32,17 +32,39 @@ int date::getYear()
 	return year_;
 }
 
-void pareserToInt(str* date_)
+void date::dateParseToInt(str date_)   
 {
-	int i = 0;
-	int counter = 0;
-	while (date_[i])
+	char* day = new char[2];
+	char* month = new char[2];
+	char* year = new char[4];
+	for (int i = 0; date_.get_length(); i++)
 	{
-		if ()
+		if (date_[i] == '/')
+		{
+			continue;
+		}
+		if (i < 2)
+		{
+			day[i] = date_[i];
+		}
+		if (i > 3 && i < 5)
+		{
+			month[i] = date_[i];
+		}
+		if (i > 5 && i < 10)
+		{
+			year[i] = date_[i];
+		}
 	}
+	day_ = std::atoi(day);
+	month_ = std::atoi(month);
+	year_ = std::atoi(year);
+	delete[] day;
+	delete[] month;
+	delete[] year;
 }
 
 std::istream& operator>>(std::istream& in, date& date)
 {
-	in >> 
+	return in >> date.date_;
 }
